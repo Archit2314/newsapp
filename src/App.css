@@ -1,0 +1,379 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  min-height: 80px;
+
+  background: #111;
+
+  display: flex;
+  align-items: center;
+
+  padding: 15px 30px;
+
+  gap: 30px;
+
+  border-bottom: 1px solid #333;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo {
+  margin-right: auto;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 28px;
+}
+
+
+/* =========================
+   CATEGORY BUTTONS
+========================= */
+
+.categoryBtns {
+  display: flex;
+  gap: 10px;
+}
+
+.categoryBtns button {
+  background: #222;
+  color: white;
+
+  border: 1px solid #444;
+
+  padding: 9px 15px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.categoryBtns button:hover {
+  background: #e50914;
+  border-color: #e50914;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar input {
+  width: 220px;
+
+  padding: 10px 14px;
+
+  background: #fff;
+
+  border: none;
+
+  border-radius: 5px;
+
+  outline: none;
+}
+
+.search-bar button {
+  background: #e50914;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.search-bar button:hover {
+  background: #b20710;
+}
+
+
+/* =========================
+   NEWS CONTAINER
+========================= */
+
+.cardContainer {
+  width: 95%;
+
+  margin: 35px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background: #111;
+
+  border: 1px solid #292929;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 470px;
+
+  transition: transform 0.3s,
+              box-shadow 0.3s,
+              border-color 0.3s;
+}
+
+
+/* HOVER */
+
+.card:hover {
+  transform: translateY(-7px);
+
+  border-color: #e50914;
+
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.imageBox {
+  width: 100%;
+  height: 190px;
+
+  background: #222;
+
+  overflow: hidden;
+}
+
+.imageBox img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s;
+}
+
+.card:hover .imageBox img {
+  transform: scale(1.05);
+}
+
+
+/* NO IMAGE */
+
+.noImage {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.cardContent {
+  padding: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+
+/* CATEGORY */
+
+.category {
+  color: #e50914;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 10px;
+}
+
+
+/* TITLE */
+
+.cardContent h2 {
+  font-size: 19px;
+
+  line-height: 1.4;
+
+  margin-bottom: 12px;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* DESCRIPTION */
+
+.cardContent p {
+  color: #aaa;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 4;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   READ MORE
+========================= */
+
+.cardContent a {
+  margin-top: auto;
+
+  padding-top: 18px;
+
+  color: #e50914;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  font-size: 14px;
+}
+
+.cardContent a:hover {
+  color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Laptop */
+
+@media (max-width: 1200px) {
+
+  .cardContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .categoryBtns {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .cardContainer {
+    grid-template-columns: 1fr;
+  }
+
+}
